@@ -1,0 +1,66 @@
+name: Data Structures Olympics
+
+on:
+  push:
+    branches: [ "**" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: olympics-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Ensure build tools are present
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Show tool versions
+        run: |
+          gcc --version
+          python3 --version
+
+      - name: Run benchmarks
+        run: |
+          python3 scripts/run_bench.py
+
+      - name: Update leaderboard
+        run: |
+          python3 scripts/update_leaderboard.py
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: olympics-results-${{ github.sha }}
+          path: |
+            bench_results.json
+            bench_history.json
+            OLYMPICS.md
+
+      - name: Commit leaderboard and history (push events only)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bench_history.json OLYMPICS.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Olympics: update leaderboard [skip ci]"
+            git push
+          fi

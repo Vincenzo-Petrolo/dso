@@ -1,0 +1,19 @@
+{
+  "build": {
+    "cc": "gcc",
+    "cflags": "-O3 -std=c11",
+    "sources": [
+      "main.c",
+      "skiplist.c",
+      "list.c"
+    ],
+    "output": "bench"
+  },
+  "workload": {
+    "n_insert": 100000,
+    "n_hit": 100000,
+    "n_miss": 100000,
+    "seed": 42
+  },
+  "repetitions": 5
+}
