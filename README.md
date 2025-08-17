@@ -1,3 +1,7 @@
+# Project
+
+<!-- OLYMPICS START -->
+
 # 🏅 Data Structures Olympics
 
 Automatic performance comparison (insert/search) executed via GitHub Actions.
@@ -24,3 +28,5 @@ This section is updated on every push.
 |---|---:|---|---|
 | skiplist | 76.361 | `8891fa357854` | 2025-08-17T10:25:20Z |
 | list | 19299.994 | `8891fa357854` | 2025-08-17T10:25:20Z |
+
+<!-- OLYMPICS END -->

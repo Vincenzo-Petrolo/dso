@@ -1,0 +1,216 @@
+{
+  "history": [
+    {
+      "timestamp": "2025-08-17T10:25:20Z",
+      "git_sha": "8891fa357854cbad9d538fa22318f43793be8520",
+      "runner_os": "Linux-6.11.0-1018-azure-x86_64-with-glibc2.39",
+      "workload": {
+        "n_insert": 100000,
+        "n_hit": 100000,
+        "n_miss": 100000,
+        "seed": 42
+      },
+      "repetitions": 5,
+      "aggregate": {
+        "skiplist": {
+          "insert_ms": {
+            "mean": 40.2106,
+            "median": 40.049,
+            "stdev": 0.9479315587108608,
+            "min": 39.262,
+            "max": 41.804,
+            "samples": [
+              40.049,
+              40.644,
+              41.804,
+              39.294,
+              39.262
+            ]
+          },
+          "search_hit_ms": {
+            "mean": 34.4912,
+            "median": 32.984,
+            "stdev": 3.4176723306952645,
+            "min": 31.254,
+            "max": 40.536,
+            "samples": [
+              35.874,
+              32.984,
+              40.536,
+              31.254,
+              31.808
+            ]
+          },
+          "search_miss_ms": {
+            "mean": 2.7012,
+            "median": 2.707,
+            "stdev": 0.02626328235388715,
+            "min": 2.653,
+            "max": 2.733,
+            "samples": [
+              2.71,
+              2.733,
+              2.653,
+              2.707,
+              2.703
+            ]
+          },
+          "total_ms": {
+            "mean": 77.403,
+            "median": 76.361,
+            "stdev": 4.256514254645465,
+            "min": 73.255,
+            "max": 84.99300000000001,
+            "samples": [
+              78.633,
+              76.361,
+              84.99300000000001,
+              73.255,
+              73.773
+            ]
+          },
+          "ops_per_sec": {
+            "insert": 2496941.2469724584,
+            "search_hit": 3031772.9808391947,
+            "search_miss": 36941263.391207986
+          }
+        },
+        "list": {
+          "insert_ms": {
+            "mean": 1.4324,
+            "median": 1.43,
+            "stdev": 0.01818350901228917,
+            "min": 1.417,
+            "max": 1.467,
+            "samples": [
+              1.43,
+              1.418,
+              1.417,
+              1.467,
+              1.43
+            ]
+          },
+          "search_hit_ms": {
+            "mean": 6447.8008,
+            "median": 6446.237,
+            "stdev": 4.732314080869828,
+            "min": 6443.576,
+            "max": 6456.855,
+            "samples": [
+              6443.576,
+              6456.855,
+              6447.646,
+              6444.69,
+              6446.237
+            ]
+          },
+          "search_miss_ms": {
+            "mean": 12852.2072,
+            "median": 12851.716,
+            "stdev": 6.720129683272713,
+            "min": 12846.179,
+            "max": 12864.592,
+            "samples": [
+              12864.592,
+              12846.179,
+              12846.222,
+              12851.716,
+              12852.327
+            ]
+          },
+          "total_ms": {
+            "mean": 19301.4404,
+            "median": 19299.994,
+            "stdev": 5.066034686024605,
+            "min": 19295.285,
+            "max": 19309.598,
+            "samples": [
+              19309.598,
+              19304.451999999997,
+              19295.285,
+              19297.873,
+              19299.994
+            ]
+          },
+          "ops_per_sec": {
+            "insert": 69930069.93006994,
+            "search_hit": 15512.926378598862,
+            "search_miss": 7781.062077624498
+          }
+        }
+      },
+      "raw_runs": [
+        {
+          "skiplist": {
+            "insert_ms": 40.049,
+            "search_hit_ms": 35.874,
+            "search_miss_ms": 2.71,
+            "total_ms": 78.633
+          },
+          "list": {
+            "insert_ms": 1.43,
+            "search_hit_ms": 6443.576,
+            "search_miss_ms": 12864.592,
+            "total_ms": 19309.598
+          }
+        },
+        {
+          "skiplist": {
+            "insert_ms": 40.644,
+            "search_hit_ms": 32.984,
+            "search_miss_ms": 2.733,
+            "total_ms": 76.361
+          },
+          "list": {
+            "insert_ms": 1.418,
+            "search_hit_ms": 6456.855,
+            "search_miss_ms": 12846.179,
+            "total_ms": 19304.451999999997
+          }
+        },
+        {
+          "skiplist": {
+            "insert_ms": 41.804,
+            "search_hit_ms": 40.536,
+            "search_miss_ms": 2.653,
+            "total_ms": 84.99300000000001
+          },
+          "list": {
+            "insert_ms": 1.417,
+            "search_hit_ms": 6447.646,
+            "search_miss_ms": 12846.222,
+            "total_ms": 19295.285
+          }
+        },
+        {
+          "skiplist": {
+            "insert_ms": 39.294,
+            "search_hit_ms": 31.254,
+            "search_miss_ms": 2.707,
+            "total_ms": 73.255
+          },
+          "list": {
+            "insert_ms": 1.467,
+            "search_hit_ms": 6444.69,
+            "search_miss_ms": 12851.716,
+            "total_ms": 19297.873
+          }
+        },
+        {
+          "skiplist": {
+            "insert_ms": 39.262,
+            "search_hit_ms": 31.808,
+            "search_miss_ms": 2.703,
+            "total_ms": 73.773
+          },
+          "list": {
+            "insert_ms": 1.43,
+            "search_hit_ms": 6446.237,
+            "search_miss_ms": 12852.327,
+            "total_ms": 19299.994
+          }
+        }
+      ]
+    }
+  ]
+}
